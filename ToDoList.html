@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoList—最简单的待办事项列表</title>
+    <style type="text/css">
+        html{
+            display: block;
+        }
+        head{
+            display: none;
+        }
+        body{
+            font-size: 16px;
+            background: #CDCDCD;
+            font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei";
+        }
+
+        header{
+            background: #333333;
+            width: 100%;
+            height: 50px;
+
+        }
+        section{
+            padding: 0 10px;
+            width: 600px;
+            margin: 0 auto;
+        }
+        /*ToDoList*/
+        label{
+            float: left;
+            width: 100px;
+            line-height: 50px;
+            color: #DDD;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        input{
+            float: right;
+            width: 60%;
+            height: 24px;
+            margin-top: 12px;
+            text-indent: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.24), 0 1px 6px rgba(0,0,0,1) inset;
+            border: none;
+        }
+        footer{
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+        footer a{
+            text-decoration: none;
+            color: white;
+        }
+        footer a:hover{
+            border: 1px solid red;
+            color: red;
+            font-size: 18px;
+        }
+        h2{
+            margin-top: 20px;
+            position: relative;
+        }
+        span{
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            display: inline-block;
+            padding: 0 5px;
+            height: 20px;
+            border-radius: 20px;
+            background: #E6E6FA;
+            line-height: 22px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        ol{
+            list-style-type: none;
+
+        }
+        ol input{
+            position: absolute;
+            top: 1px;
+            left: 10px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin: 3px 3px 3px 4px;
+
+        }
+        li{
+            height: 32px;
+            line-height: 32px;
+            background: #fff;
+            position: relative;
+            margin-bottom: 10px;
+            padding: 0 45px;
+            border-radius: 3px;
+            border-left: 5px solid #629A9C;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+            cursor: move;
+        }
+        li p{
+            line-height: 32px;
+            margin-left: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: #333333;
+        }
+        li a{
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 14px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px red inset; border:1px solid green;
+            border: none;
+        }
+        li a i{
+            margin: 0 auto;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<!--onload 事件在页面载入完成后立即触发JS中的两个函数-->
+<body onload="count();countOut()">
+<header>
+    <section>
+        <form action="javascript:readInput()" id = 'form'>
+            <label>ToDoList</label>
+            <input placeholder="添加todo" id="todo"/>
+        </form>
+    </section>
+</header>
+<section id="s1">
+    <h2>正在进行
+        <span id="countInID">
+            0
+        </span>
+        <ol id="in">
+
+        </ol>
+    </h2>
+    <h2>已经完成
+        <span id="countOutID">
+            0
+        </span>
+        <ol id="out">
+
+        </ol>
+    </h2>
+</section>
+<footer>
+            Copyright © 2018 todolist.cn
+    <a href="javascript:clear()">清除</a>
+</footer>
+<script type="text/javascript" src="../JS/ToDolist.js"></script>
+</body>
+</html>
